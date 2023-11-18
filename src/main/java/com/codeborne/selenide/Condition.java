@@ -3,6 +3,7 @@ package com.codeborne.selenide;
 import com.codeborne.selenide.conditions.And;
 import com.codeborne.selenide.conditions.Attribute;
 import com.codeborne.selenide.conditions.AttributeWithValue;
+import com.codeborne.selenide.conditions.Animated;
 import com.codeborne.selenide.conditions.CaseSensitiveText;
 import com.codeborne.selenide.conditions.Checked;
 import com.codeborne.selenide.conditions.CssClass;
@@ -134,6 +135,7 @@ public final class Condition {
    * @since 6.5.0
    */
   public static final WebElementCondition editable = new Editable();
+  public static final WebElementCondition animated = new Animated();
 
   /**
    * Check if element has given attribute (with any value)

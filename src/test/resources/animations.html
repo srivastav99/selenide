@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    .magic-box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+    }
+    .move{
+      -webkit-animation: moveall 5s;
+      animation: moveall 5s;
+    }
+    .move-ltr{
+      -webkit-animation: moveltr 5s;
+      animation: moveltr 5s;
+    }
+    .move-ttb{
+      -webkit-animation: movettb 5s;
+      animation: movettb 5s;
+    }
+
+    @keyframes moveltr {
+      0%   { left: 0px; top: 0px;}
+      50%  {left: 200px; top: 0px;}
+      100% {left: 0px; top: 0px;}
+    }
+    @keyframes movettb {
+      0%   {left: 0px; top: 0px;}
+      50%  {top: 200px;left: 0px;}
+      100% {left: 0px; top: 0px;}
+    }
+  </style>
+  <script>
+    // function allmove(){
+    //   const abox = document.getElementsByClassName("box")[0];
+    //   abox.classList.remove("move-ltr");
+    //   abox.classList.remove("move-ttb");
+    //   abox.classList.toggle("move");
+    // }
+    function ltr(){
+      const abox = document.querySelector(".magic-box")
+      abox.classList.toggle("move-ltr");
+    }
+    // function ttb(){
+    //   const abox = document.getElementsByClassName("box")[0];
+    //   abox.classList.remove("move-ltr");
+    //   abox.classList.remove("move");
+    //   abox.classList.toggle("move-ttb");
+    // }
+  </script>
+</head>
+<body>
+
+<h2>Animations</h2>
+
+<div class="magic-box"></div>
+<p>Click button to move</p>
+<button id="move-box" onclick="ltr()">Go-Go-Go</button>
+</body>
+</html>

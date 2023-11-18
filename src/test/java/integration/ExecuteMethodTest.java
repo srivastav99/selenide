@@ -59,6 +59,7 @@ final class ExecuteMethodTest extends ITest {
 
   @Test
   void canExecuteStandardCommand() {
+    setTimeout(200);
     $("#username").execute(new Click());
   }
 

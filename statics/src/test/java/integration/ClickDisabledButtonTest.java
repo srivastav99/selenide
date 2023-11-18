@@ -15,12 +15,12 @@ final class ClickDisabledButtonTest extends IntegrationTest {
   @Test
   void failToClickIfButtonIsDisabled() {
     assertThatThrownBy(() -> $("#submit").click())
-      .hasMessageStartingWith("Element should be clickable: interactable and enabled {#submit}");
+      .hasMessageStartingWith("Element should be clickable: interactable and enabled and not animated {#submit}");
   }
 
   @Test
   void failToDoubleClickIfButtonIsDisabled() {
     assertThatThrownBy(() -> $("#submit").doubleClick())
-      .hasMessageStartingWith("Element should be clickable: interactable and enabled {#submit}");
+      .hasMessageStartingWith("Element should be clickable: interactable and enabled and not animated {#submit}");
   }
 }

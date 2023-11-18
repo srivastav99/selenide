@@ -125,7 +125,7 @@ final class MissingElementTest extends IntegrationTest {
     )
       .isInstanceOf(ElementShould.class)
       .hasMessageMatching(String.format(
-        "Element should be clickable: interactable and enabled \\{#theHiddenElement}%n" +
+        "Element should be clickable: interactable and enabled and not animated \\{#theHiddenElement}%n" +
           "Element: '<div id=\"theHiddenElement\" displayed:false></div>'%n" +
           "Actual value: hidden, opacity=1%n" +
           "Screenshot: %s%s%n" +
@@ -179,7 +179,7 @@ final class MissingElementTest extends IntegrationTest {
       $(pageObject.categoryDropdown).click()
     ).isInstanceOf(ElementNotFound.class)
       .hasMessageMatching(String.format("Element not found \\{By.id: invalid_id}%n" +
-        "Expected: clickable: interactable and enabled%n" +
+        "Expected: clickable: interactable and enabled and not animated%n" +
         "Screenshot: %s%s%n" +
         "Page source: %s%s%n" +
         "Timeout: 15 ms.%n" +

@@ -1,5 +1,6 @@
 package integration;
 
+import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -314,13 +315,13 @@ final class SelenideMethodsTest extends IntegrationTest {
 
   @Test
   void userCanFollowLinks() {
-    $(By.linkText("Want to see ajax in action?")).scrollTo().click();
+    $(By.linkText("Want to see ajax in action?")).scrollTo().click(ClickOptions.withTimeout(ofMillis(200)));
     webdriver().shouldHave(urlContaining("long_ajax_request.html"), ofMillis(1000));
   }
 
   @Test
   void userCanFollowLinksUsingScrollIntoViewBoolean() {
-    $(By.linkText("Want to see ajax in action?")).scrollIntoView(true).click();
+    $(By.linkText("Want to see ajax in action?")).scrollIntoView(true).scrollTo().click(ClickOptions.withTimeout(ofMillis(200)));
     webdriver().shouldHave(urlContaining("long_ajax_request.html"), ofMillis(1000));
   }
 

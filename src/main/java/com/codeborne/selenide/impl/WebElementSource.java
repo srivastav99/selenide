@@ -21,6 +21,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 import static com.codeborne.selenide.CheckResult.Verdict.ACCEPT;
+import static com.codeborne.selenide.Condition.animated;
 import static com.codeborne.selenide.Condition.editable;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.interactable;
@@ -170,7 +171,11 @@ public abstract class WebElementSource {
   @Nonnull
   @CheckReturnValue
   public WebElement findAndAssertElementIsClickable() {
-    return requireNonNull(checkConditionAndReturnElement("be ", new And("clickable", asList(interactable, enabled)), false));
+    return requireNonNull(checkConditionAndReturnElement(
+      "be ",
+      new And("clickable", asList(interactable, enabled, not(animated))),
+      false)
+    );
   }
 
   /**
